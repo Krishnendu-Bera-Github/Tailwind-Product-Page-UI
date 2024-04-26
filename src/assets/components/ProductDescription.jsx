@@ -15,7 +15,7 @@ const ProductDescription = () => {
         </p>
       </div>
 
-      <div className="flex justify-between items-center my-6">
+      <div className="flex justify-between items-center my-6 md:flex md:flex-col md:items-start md:gap-4">
         <div className="flex items-center gap-5">
           <span className="text-4xl font-medium">$125.00</span>
           <span className="bg-paleOrange text-lg font-medium py-1 px-2 rounded-md text-orange">
@@ -23,27 +23,35 @@ const ProductDescription = () => {
           </span>
         </div>
         <div>
-          <span className="text-lg font-semibold text-gray-500">$250.00</span>
+          <span className="text-lg font-semibold text-gray-500 line-through md:pl-1">
+            $250.00
+          </span>
         </div>
       </div>
 
-      <div className="bg-lightGrayishBlue py-3 px-8 flex justify-between items-center rounded-md">
-        <img
-          className="cursor-pointer"
-          src="public/images/icon-minus.svg"
-          alt=""
-        />
-        <span className="font-bold text-lg">0</span>
-        <img
-          className="cursor-pointer"
-          src="public/images/icon-plus.svg"
-          alt=""
-        />
-      </div>
+      <div className="md:flex md:justify-between items-center">
+        <div className="bg-lightGrayishBlue py-3 px-8 flex justify-between items-center rounded-md md:w-[35%]">
+          <img
+            className="cursor-pointer "
+            src="public/images/icon-minus.svg"
+            alt=""
+          />
+          <span className="font-bold text-lg">0</span>
+          <img
+            className="cursor-pointer"
+            src="public/images/icon-plus.svg"
+            alt=""
+          />
+        </div>
 
-      <div className="my-6 bg-orange py-3 px-8 text-white flex items-center justify-center gap-5 rounded-md cursor-pointer font-semibold hover:opacity-80">
-        <img className="text-white" src="public/images/icon-cart.svg" alt="" />
-        <button>Add to Cart</button>
+        <div className="my-6 bg-orange py-3 px-8 text-white flex items-center justify-center gap-5 rounded-md cursor-pointer font-semibold hover:opacity-80 md:w-[60%] md:gap-5">
+          <img
+            className="text-white"
+            src="public/images/icon-cart.svg"
+            alt=""
+          />
+          <button>Add to Cart</button>
+        </div>
       </div>
 
       {/* <div className="min-h-screen"></div> */}
