@@ -2,13 +2,18 @@ import { useState } from "react";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const [cartToggle, setCartToggle] = useState(false);
 
   const handleToggle = () => {
     setToggle(!toggle);
   };
 
+  const handleCartToggle = () => {
+    setCartToggle(!cartToggle);
+  };
+
   return (
-    <nav className="max-w-6xl mx-auto p-5 ">
+    <nav className="max-w-6xl mx-auto p-5 relative">
       <div className="flex justify-between items-center  ">
         <div className="flex gap-5 items-center">
           <div className="cursor-pointer sm:hidden" onClick={handleToggle}>
@@ -43,6 +48,7 @@ const Navbar = () => {
               className="cursor-pointer sm:w-6"
               src="/public/images/icon-cart.svg"
               alt=""
+              onClick={handleCartToggle}
             />
           </div>
           <div>
@@ -68,6 +74,41 @@ const Navbar = () => {
             <p>Women</p>
             <p>About</p>
             <p>Contact</p>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
+
+      {cartToggle ? (
+        <div className="absolute w-[95%] h-60 bg-white z-20 left-0 right-0 top-24 -bottom-12 rounded-lg mx-auto p-2 sm:w-96 sm:left-auto sm:bg-lightGrayishBlue sm:right-4 sm:h-52 ">
+          <span className="px-4 my-8 font-semibold">Cart</span>
+          <div className="border my-4"></div>
+
+          <div className="flex items-center ">
+            <div className="px-4">
+              <img
+                className="h-16 rounded-lg sm:h-12"
+                src="public/images/image-product-1-thumbnail.jpg"
+                alt=""
+              />
+            </div>
+            <div>
+              <p className="text-xl sm:text-lg">
+                Fall Limitless Edition Sneakers
+              </p>
+              <p>
+                $125 x 3 <span className="font-bold pl-5">$375.00</span>
+              </p>
+            </div>
+            <div className="px-4">
+              <img src="public/images/icon-delete.svg" alt="" />
+            </div>
+          </div>
+          <div className="p-4 mt-2 sm:p-2">
+            <button className="bg-orange w-full py-4 rounded-2xl">
+              Checkout
+            </button>
           </div>
         </div>
       ) : (
