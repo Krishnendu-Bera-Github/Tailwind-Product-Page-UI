@@ -55,7 +55,7 @@ const Navbar = () => {
         </div>
       </div>
       {toggle ? (
-        <div className="bg-white w-2/3 inset-0 fixed p-5 sm:hidden">
+        <div className="bg-white z-10 w-2/3 inset-0 fixed p-5 sm:hidden">
           <img
             className="mb-10 cursor-pointer"
             src="public/images/icon-close.svg"
